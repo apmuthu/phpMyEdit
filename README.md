@@ -8,3 +8,15 @@
 * [pilrof](https://github.com/plirof/phpMyEdit-PHP7.0)
 * [petrich](https://github.com/petrich/phpMyEdit-PHP7.0)
 
+# Documentation ERRATA
+* The file `doc/pdf/phpMyEdit-5.7.1.pdf` in the second line under **Example 4-7**... states that `'P'` is for password field but should actually be `'W'`.
+* This is coded in the class file for element `input` in `function password($k)` and in the backward compatible element `options` in `function backward_compatibility()`. 
+
+# Minimal Requirements
+* Apache 1.3.23
+* PHP 4.1.2
+* MySQL 3.23.47
+
+The original uses the *php mysql* function set.
+
+This fork may develop the *php mysqli* driver in time to come, but will not exceed the PHP minimal requirement beyond PHP v5.3.3.

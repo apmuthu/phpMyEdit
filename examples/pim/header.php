@@ -53,6 +53,9 @@ $opts['un'] = 'root';
 $opts['pw'] = '';
 $opts['db'] = 'pim';
 
+// if any application is integrated with these scripts, take the DB handle directly instead of above connection parameters with
+// $opts['dbh'] = $your_project_db_handle;
+
 // Options you wish to give the users
 // A - add,  C - change, P - copy, V - view, D - delete,
 // F - filter, I - initial sort suppressed

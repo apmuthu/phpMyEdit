@@ -35,12 +35,34 @@ $opts['fdd']['UserID'] = array(
   'maxlen'   => 10,
   'sort'     => true
 );
+if(isset($_REQUEST['u']) && $_REQUEST['u']+0 > 0) { 
+    $u = $_REQUEST['u']+0; 
+    $opts['filters'] = "UserID=$u"; 
+    $opts['fdd']['UserID']['options'] = 'AVCPDR';
+    $opts['fdd']['UserID']['values'] = array($u);
+    $opts['fdd']['UserID']['default'] = $u;
+    $opts['cgi']['persist'] = array( 'u' => $u );
+} else {
+    if (isset($opts['cgi']['persist']['u'])) {
+        $opts['fdd']['UserID']['options'] = 'AVCPDF';
+        $opts['filters'] = "UserID=$u"; 
+        $opts['fdd']['UserID']['values'] = array($u);
+    } else {
+        $opts['fdd']['UserID']['select']  = 'D';
+        $opts['fdd']['UserID']['values']  = array(
+                   'table' => 'users',
+                   'column' => 'UserID',
+                   'description' => 'FullName'
+                );
+    }
+
+}
 $opts['fdd']['EntryDT'] = array(
   'name'     => 'EntryDT',
   'select'   => 'T',
-  'options'  => 'AVCPDR', // updated automatically (MySQL feature)
+  'options'  => 'LVDFR', // updated automatically (MySQL feature)
   'maxlen'   => 19,
-  'default'  => 'CURRENT_TIMESTAMP',
+//  'values'  => array(date('Y-m-d H:i:s')),
   'sort'     => true
 );
 $opts['fdd']['FileRef'] = array(
@@ -67,6 +89,8 @@ $opts['fdd']['Issue'] = array(
 
 // Now important call to phpMyEdit
 require_once $pme_root.'phpMyEdit.class.php';
+//file_put_contents('pme_vars.txt', print_r(get_defined_vars(), true));
+
 new phpMyEdit($opts);
 
 echo $pme_end;

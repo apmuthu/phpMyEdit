@@ -33,7 +33,8 @@ $opts['fdd']['InstName'] = array(
   'name'     => 'InstName',
   'select'   => 'T',
   'maxlen'   => 50,
-  'sort'     => true
+  'sort'     => true,
+  'URL'      => './users.php?i=$key'
 );
 $opts['fdd']['StDate'] = array(
   'name'     => 'StDate',
@@ -45,7 +46,8 @@ $opts['fdd']['StDate'] = array(
 );
 $opts['fdd']['Inactive'] = array(
   'name'     => 'Inactive',
-  'select'   => 'T',
+  'select'   => 'C',
+  'values' => array(1),
   'maxlen'   => 1,
   'default'  => '0',
   'sort'     => true

@@ -1,6 +1,11 @@
 <?php
 if(!defined('PIM_EXAMPLE') && PIM_EXAMPLE) exit;
 $pme_root = '../../core/';
+$pme_end = "
+
+</body>
+</html>
+";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 		"http://www.w3.org/TR/html4/loose.dtd">
@@ -58,7 +63,7 @@ $opts['multiple'] = '4';
 
 // Navigation style: B - buttons (default), T - text links, G - graphic links
 // Buttons position: U - up, D - down (default)
-$opts['navigation'] = 'DB';
+$opts['navigation'] = 'DG';
 
 // Display special page elements
 $opts['display'] = array(
@@ -127,3 +132,8 @@ appear in generated list. Here are some most used field options documented.
   This is useful for giving more meaning to column values. Multiple
   descriptions fields are also possible. Check documentation for this.
 */
+
+// action images folder settings
+//$opts['url']['images'] = $pme_root . 'images/';
+$opts['url']['images'] = $pme_root . 'images/alt/';
+//$opts['url']['images'] = $pme_root . 'images/alt2/';

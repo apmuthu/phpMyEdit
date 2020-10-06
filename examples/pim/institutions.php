@@ -55,7 +55,5 @@ $opts['fdd']['Inactive'] = array(
 require_once $pme_root.'phpMyEdit.class.php';
 new phpMyEdit($opts);
 
+echo $pme_end;
 ?>
-
-</body>
-</html>

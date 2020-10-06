@@ -69,7 +69,5 @@ $opts['fdd']['Issue'] = array(
 require_once $pme_root.'phpMyEdit.class.php';
 new phpMyEdit($opts);
 
+echo $pme_end;
 ?>
-
-</body>
-</html>

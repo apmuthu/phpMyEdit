@@ -26,6 +26,7 @@ $pme_end = "
 	td.pme-message { text-align: center; }
 	td.pme-stats   { text-align: right;  }
 </style>
+<link rel="stylesheet" href="pim.css">
 </head>
 <body>
 <h3><?php $page_title; ?></h3>

@@ -1437,7 +1437,7 @@ function '.$this->js['prefix'].'filter_handler(theForm, theEvent)
 			}
 		}
 		if (intval($this->fdd[$k]['trimlen']) > 0 && strlen($value) > $this->fdd[$k]['trimlen']) {
-			$value = ereg_replace("[\r\n\t ]+",' ',$value);
+			$value = str_replace("[\r\n\t ]+",' ',$value);
 			$value = substr($value, 0, $this->fdd[$k]['trimlen'] - 3).'...';
 		}
 		if (@$this->fdd[$k]['mask']) {

@@ -62,8 +62,8 @@ if (! defined('PHP_EOL')) {
 $hn = @$_POST['hn'];
 $un = @$_POST['un'];
 $pw = @$_POST['pw'];
-if(strlen($_POST['db'])>0) $db = @$_POST['db'];
-if(strlen($_POST['tb'])>0) $tb = @$_POST['tb'];
+if(isset($_POST['db']) && strlen($_POST['db'])>0) $db = @$_POST['db'];
+if(isset($_POST['tb']) && strlen($_POST['tb'])>0) $tb = @$_POST['tb'];
 $id = @$_POST['id'];
 $submit        = @$_POST['submit'];
 $options       = @$_POST['options'];
@@ -186,10 +186,10 @@ if ((!$dbl) or empty($submit)) {
 		<td><input type="password" name="pw" value="'.htmlspecialchars($pw).'"></td>
 		</tr><tr>
 		<td>Database:</td>
-        <td><input type="text" name="db" value="'.htmlspecialchars($db).'"></td>
+        <td><input type="text" name="db" value="'.(isset($db) ? htmlspecialchars($db) : '').'"></td>
 		</tr><tr>
 		<td>Table:</td>
-		<td><input type="text" name="tb" value="'.htmlspecialchars($tb).'"></td>
+		<td><input type="text" name="tb" value="'.(isset($tb) ? htmlspecialchars($tb) : '').'"></td>
 		</tr>
 		</table><br>
 		<input type="submit" name="submit" value="Submit">

@@ -11,6 +11,7 @@
 # Documentation ERRATA
 * The file `doc/pdf/phpMyEdit-5.7.1.pdf` in the second line under **Example 4-7**... states that `'P'` is for password field but should actually be `'W'`.
 * This is coded in the class file for element `input` in `function password($k)` and in the backward compatible element `options` in `function backward_compatibility()`. 
+* The corresponding html doc file that needs to be corrected is `doc/html/configuration.basic-options.html` under **Input settings**
 
 # Minimal Requirements
 * Apache 1.3.23

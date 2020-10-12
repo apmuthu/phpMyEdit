@@ -39,9 +39,9 @@ $opts['fdd']['InstName'] = array(
 $opts['fdd']['StDate'] = array(
   'name'     => 'StDate',
   'select'   => 'T',
-  'options'  => 'AVCPDR', // updated automatically (MySQL feature)
+  'options'  => 'LVDFR', // updated automatically (MySQL feature)
   'maxlen'   => 19,
-  'default'  => 'CURRENT_TIMESTAMP',
+//  'values'  => array(date('Y-m-d H:i:s')),
   'sort'     => true
 );
 $opts['fdd']['Inactive'] = array(

@@ -3,6 +3,8 @@
 
 CREATE DATABASE IF NOT EXISTS pim CHARACTER SET latin1 COLLATE latin1_general_ci;
 
+USE pim;
+
 CREATE TABLE IF NOT EXISTS `institutions` (
   `InstID` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Institution ID',
   `InstName` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT 'Institution Name',
